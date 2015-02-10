@@ -17,18 +17,18 @@ import java.util.Scanner; //imports the scanner
         decimals *= 10000;
         
         
-        int first = 0 + ((int)decimals /= 1000);//locates the first digit and saves it
+        int first = 0 + ((int)decimals / 1000);//locates the first digit and saves it
         decimals = decimals - (first * 1000);
         
-        int second = 0 + ((int)decimals /= 100);//locates the second digit and saves it
+        int second = 0 + ((int)decimals / 100);//locates the second digit and saves it
         decimals = decimals - (second * 100);
         
-        int third = 0 + ((int)decimals /= 10);//locates the third digit and saves it
+        int third = 0 + ((int)decimals / 10);//locates the third digit and saves it
         decimals = decimals - (third * 10);
         
         int fourth = 0 + (int)decimals;//locates the fourth digit and saves it
         
-        System.out.println("The four digits are: " + first + ", " + second + ", " + third + ", " + fourth);//outputs the four digits
+        System.out.println("The four digits are: " + first + ", " + second + ", " + third + ", " + (fourth + 1));//outputs the four digits and accomodates for the rounding down of the fourth digit
       
         }
         
