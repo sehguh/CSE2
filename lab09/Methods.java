@@ -18,7 +18,7 @@ import java.util.Random;//import the random function
                 
                 System.out.println("Press 1 to get another sentence, press 2 to quit: ");//asks the user for another sentence if they want it
                 x = scan.nextInt();
-                if(x == 2){//ends the program of they press not 2
+                if(x == 1){//ends the program of they press not 2
                     
                     continue;
                 }else{
