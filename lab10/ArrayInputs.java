@@ -5,6 +5,7 @@
 
 import java.util.Scanner;
     public class ArrayInputs {
+        
         public static void main(String [] args){
             
             Scanner scan = new Scanner(System.in);
@@ -34,17 +35,47 @@ import java.util.Scanner;
             
             int i = 0;
             int x = 0;
-            System.out.println("Please enter 10 positive integers");
-            
+            int look = 1;
+                int z = 0;
+
             for(i = 0; i < y; i++){
-                    
+                System.out.println("Please enter " + y + " positive integers");
                 
-                num[i] = ;
-            }
+                
+            
+                while(look == 0 && scan.hasNextInt()){
+                
+                if(scan.hasNextInt()){
+                z = scan.nextInt();
+                }else{
+                System.out.println("That is not an integer");
+                look = 0;
+                }
+                }
+                while(look == 0);{
+            
+                
+                if(z < 0){
+                    System.out.println("The integer must be positive");
+                    look = 0;
+                }
+                }
+            
+                num[i] = z;
             
             
             
             
             
         }
+        System.out.println("The array is: ");
+        
+        for(int j = 0; j < num.length; j++){
+            System.out.println(num[j]);
+        }
+        
+        
+       
+        
+    }
     }

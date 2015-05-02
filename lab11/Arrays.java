@@ -83,7 +83,7 @@ import java.util.Random;//imports the random function
             
          
           
-         while(high > low) {//performs it while low is lower than high
+         while(high >= low) {//performs it while low is lower than high
              int middle = (low + high) / 2;//creates the middle variable
              if(array2[middle] == y) {//if the middle value is equal to y then it outputs that it was successful
                  System.out.println(y +" was found in the list with");
@@ -100,8 +100,8 @@ import java.util.Random;//imports the random function
         }
         
         System.out.println(y + " was not found in the list");//if the number wasnt found tells the user
-        System.out.println("The number above the key was: " + array2[high]);//prints the index above and below
-        System.out.println("The number below the key was: " + array2[low - 1]);
+        System.out.println("The number above the key was: " + array2[low]);//prints the index above and below
+        System.out.println("The number below the key was: " + array2[high]);
         
         
             

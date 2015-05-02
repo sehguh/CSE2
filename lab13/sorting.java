@@ -28,21 +28,25 @@ import java.util.Random;
                 System.out.println();
             }
             
-            int temp = 0;
-            int min = 50;
-            
-            for(int b = 0; b < 5; b++){
-                for(int d = 0; d < b*3 + 5; d++){
-                    for(int c = 0; c < b*3 + 5; c++){
-                        if(first[b][c] < min){
-                            temp = first[b][c];
-                            first[b][c] = first[b][d];
-                            first[b][d] = temp;
-                        
+                for (int v=0; v<first.length; v++){
+            for (int u=0; u<first[v].length- 1; u++){
+                int currentMin=first[v][u];
+                int currentMinIndex1=v;
+                int currentMinIndex2=u;
+                for (int j=1+u; j<first[v].length; j++){
+                    if (currentMin>first[v][j]){
+                        currentMin=first[v][j];
+                        currentMinIndex1=v;
+                        currentMinIndex2=j;
                     }
                 }
+                if (currentMinIndex1!= v || currentMinIndex2!=u){
+                    first[currentMinIndex1][currentMinIndex2]=first[v][u];
+                    first[v][u]=currentMin;
+                }
             }
-            }
+        }
+        
             
             System.out.println("The array after sorting: ");
             
@@ -54,6 +58,28 @@ import java.util.Random;
             }
             
             
+            System.out.println("The array after sorting and copying");
             
+            int x = 0;
+            
+            int[][]second = new int[5][17];
+            
+            for(x = 0; x < 5; x++){
+                for(int y = 0; y < 17; y++){
+                    if(y < (x*3 + 5)){
+                        second[x][y] = first[x][y];
+                    }else{
+                        second[x][y] = 0;
+                    }
+                }
+            }
+            
+            
+            for(int z = 0; z < 5; z++){
+                for(int w = 0; w < 17; w++){
+                    System.out.print(second[z][w] + " ");
+                }
+                System.out.println();
+            }
         }
     }
